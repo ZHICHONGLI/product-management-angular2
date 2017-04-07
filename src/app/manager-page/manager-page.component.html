@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
+        <h1>Products</h1>
+    </div>
+    <div class="row">
+        <button class="btn btn-lg btn-outline-primary newprd" (click)="addModal()"><i class="fa fa-plus" aria-hidden="true"></i> Add New Product</button>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-header row">
+                <div class="col-md-8 ">
+                    List of {{prds.length}} products
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input id="msg" type="text" class="form-control" name="msg" [(ngModel)]="search" placeholder="Filting by name and description ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-block">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center ">Stock</th>
+                            <th class="text-center">Packing</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let prd of prds |managersearch: search ; let i = index">
+                            <!--ADD FILTER SEARCH -->
+                            <td>{{i+1}}</td>
+                            <td>{{prd.id}}</td>
+                            <td>{{prd.Name}}</td>
+                            <td class="text-center">$ {{prd.Price}}</td>
+                            <td class="text-center"> <span class="stockhover" (click)="stockEdit(prd) " [hidden]="activeItem==prd">{{prd.Stock}}</span><input [(ngModel)]="prd.Stock" [hidden]="activeItem!==prd" size="6">
+
+                                <span [hidden]="activeItem!==prd">
+                                    <span class="pointerstyle" (click)="updateStock(prd) ">update</span>
+                                <span>  | </span>
+                                <span class="pointerstyle" (click)="stockHide() "> cancel</span>
+                                </span>
+                            </td>
+                            <td class="text-center">{{prd.Packing}}</td>
+                            <td class="text-center">{{prd.Description}}</td>
+                            <td class="text-center"><button [className]="statusCls(prd.Status)" (click)="statusEdit(prd)">{{statusShow(prd.Status)}}</button></td>
+                            <td><button class="btn btn-secondary" (click)="editPrd(prd) "><i class="fa fa-pencil-square-o " aria-hidden="true "></i></button>
+                                <button class="btn btn-secondary" (click)="delPrd(prd) "><i class="fa fa-trash " aria-hidden="true "></i></button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<hr>
+<template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+    <p></p>
+  </div>
+  <div class="modal-footer">
+      
+      <button type="button" class="btn btn-danger">Delete</button>
+      
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+  </div>
+</template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr>
+
+<pre>{{closeResult}}</pre>
+
+-->

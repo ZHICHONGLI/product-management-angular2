@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <h1>Products</h1>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-header row">
+                <div class="col-md-8 ">
+                    List of {{product.length}} products
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="input-group ">
+                            <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input id="msg" type="text" class="form-control" [(ngModel)]="search" name="msg" placeholder="Search by name or description...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-block">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Stock</th>
+                            <th class="text-center">Packing</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let prd of product | searchFilter: search ; let i = index ">
+                            <!--ADD FILTER SEARCH -->
+                            <td>{{i+1}}</td>
+                            <td>{{prd.id}}</td>
+                            <td>{{prd.Name}}</td>
+                            <td class="text-center">$ {{prd.Price}}</td>
+                            <td class="text-center"> <span (click)="stockEdit(prd) ">{{stockShow(prd.Status, prd.Stock)}}</span>
+                            </td>
+                            <td class="text-center">{{prd.Packing}}</td>
+                            <td class="text-center">{{prd.Description}}</td>
+                            <td class="text-center"><button [className]="statusCls(prd.Status)">{{statusShow(prd.Status)}}</button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

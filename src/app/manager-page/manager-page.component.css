@@ -1,0 +1,29 @@
+.card {
+    width: 100%
+}
+
+.newprd {
+    margin: 5px
+}
+
+.pointerstyle {
+    cursor: pointer;
+    text-decoration: underline !important;
+    color: dodgerblue !important
+}
+
+.pointerstyle:hover {
+    background-color: lightgoldenrodyellow;
+    color: red !important
+}
+
+.stockhover:hover {
+    background-color: mediumaquamarine;
+    cursor: pointer
+}
+
+.card-header {
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}

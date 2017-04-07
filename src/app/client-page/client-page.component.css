@@ -1,0 +1,13 @@
+.card {
+    width: 100%
+}
+
+.newprd {
+    margin: 5px
+}
+
+.card-header {
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}
