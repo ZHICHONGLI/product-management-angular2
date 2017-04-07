@@ -22,8 +22,10 @@
     cursor: pointer
 }
 
-.card-header {
+#listhead {
     top: 0;
+    left: 16px !important;
+    width: 100%;
     position: -webkit-sticky;
-    position: sticky;
+    position: sticky
 }
