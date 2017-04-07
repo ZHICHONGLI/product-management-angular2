@@ -12,7 +12,6 @@ ProdsChange: Subject<any> = new Subject <any>();
    }
   
 
-
   deleteModal(prd) {
     console.log("show delete modal");
         let idx = this.Prods.indexOf(prd);
@@ -30,6 +29,7 @@ ProdsChange: Subject<any> = new Subject <any>();
 
  
   editComfirm(curPrd){
+    console.log(curPrd);
     let idx = this.Prods.indexOf(curPrd);
     this.Prods[idx]=curPrd;
     this.ProdsChange.next(this.Prods);

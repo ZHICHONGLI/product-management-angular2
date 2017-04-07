@@ -57,7 +57,7 @@ export class ManagerPageComponent implements OnInit {
 
   activeItem = false;
   updateStock(prd:any){
-    //prd.Stock = ; http.put
+    this.mdService.editComfirm(prd);
     this.activeItem = false;
   };
   stockEdit(prd:any){

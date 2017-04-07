@@ -42,13 +42,13 @@
                             <td>{{prd.id}}</td>
                             <td>{{prd.Name}}</td>
                             <td class="text-center">$ {{prd.Price}}</td>
-                            <td class="text-center"> <span class="stockhover" (click)="stockEdit(prd) " [hidden]="activeItem==prd">{{prd.Stock}}</span><input [(ngModel)]="prd.Stock" [hidden]="activeItem!==prd" size="6">
+                            <td class="text-center"> <span class="stockhover" (click)="stockEdit(prd) " [hidden]="activeItem==prd">{{prd.Stock}}</span><input style="width:80px" type="number" [(ngModel)]="prd.Stock" [hidden]="activeItem!==prd" size="6">
 
-                                <span [hidden]="activeItem!==prd">
+                                <p [hidden]="activeItem!==prd">
                                     <span class="pointerstyle" (click)="updateStock(prd) ">update</span>
-                                <span>  | </span>
-                                <span class="pointerstyle" (click)="stockHide() "> cancel</span>
-                                </span>
+                                    <span>  | </span>
+                                    <span class="pointerstyle" (click)="stockHide() "> cancel</span>
+                                </p>
                             </td>
                             <td class="text-center">{{prd.Packing}}</td>
                             <td class="text-center">{{prd.Description}}</td>
