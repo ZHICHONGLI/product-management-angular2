@@ -29,7 +29,7 @@ ProdsChange: Subject<any> = new Subject <any>();
 
  
   editComfirm(curPrd){
-    console.log(curPrd);
+   // console.log(curPrd);
     let idx = this.Prods.indexOf(curPrd);
     this.Prods[idx]=curPrd;
     this.ProdsChange.next(this.Prods);

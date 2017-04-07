@@ -6,6 +6,5 @@
     bottom: 15px;
     right: 10px;
     position: fixed;
-    z-index: 100;
-    display: none
+    z-index: 100
 }
