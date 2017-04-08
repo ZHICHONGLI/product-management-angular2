@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from "@angular/platform-browser";
 
 @Component({
@@ -6,12 +6,20 @@ import { DOCUMENT } from "@angular/platform-browser";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
  // public showBtn: boolean = true;
-
-  constructor(@Inject(DOCUMENT)public document: any){   //private document: Document ; when using --aot, Document cannot be resolved 
-
+ 
+  constructor(@Inject(DOCUMENT)public document: any,
+             // @Inject('titleService') public titleService
+  ){   //private document: Document ; when using --aot, Document cannot be resolved 
+              
   }
+
+  ngOnInit() {
+   console.log("app component");
+    
+  }
+
   public showBtn:boolean = false;
   @HostListener('window:scroll',[])
   onWindowScroll(){
@@ -24,6 +32,7 @@ export class AppComponent {
       this.showBtn = false;
     }
   }
+
 
   goTop(){
     window.scrollTo(20, 0);

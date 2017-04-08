@@ -10,7 +10,9 @@ import {products} from '../data';
 
 export class ClientPageComponent implements OnInit {
 
-  constructor(@Inject('modalService') private mdService) {
+  constructor(@Inject('modalService') private mdService,
+              @Inject('titleService') private titleSer
+  ) {
    
   }
   search : any="";
@@ -22,6 +24,7 @@ export class ClientPageComponent implements OnInit {
 
   ngOnInit() {
     console.log(products );
+    this.titleSer.setTitle("Client Page");
   }
  statusShow(status:boolean){
   if (status == true){

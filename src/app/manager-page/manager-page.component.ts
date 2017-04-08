@@ -21,16 +21,19 @@ export class ManagerPageComponent implements OnInit {
   constructor(private modalService: NgbModal, 
               //private activeModal: NgbActiveModal,
 //   private ViewContainerRef: ViewContainerRef, 
-   @Inject('modalService') private mdService
+   @Inject('modalService') private mdService,
+   @Inject('titleService') private titleSer
    ) {
 //   this.ViewContainerRef = ViewContainerRef;
    }
+ //  private titleSer : Title;
    public prds:Array<any> = this.mdService.Prods;
    _subscription = this.mdService.ProdsChange.subscribe((value)=>{
      this.prds = value;
    })
    search: string = "";
   ngOnInit() {
+    this.titleSer.setTitle("Manager Page");
   }
  
   open(content, prd){

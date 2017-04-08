@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 
 @Component({
   selector: 'app-front-page',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrontPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject('titleService')private titleService) { }
 
   ngOnInit() {
+    this.titleService.setTitle("Product Management");
   }
 
 }
