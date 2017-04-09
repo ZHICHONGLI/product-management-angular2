@@ -13,3 +13,9 @@
     width: 100%;
     left: 16px !important
 }
+
+#prdlen {
+    font-weight: 600;
+    margin-left: 5px;
+    margin-right: 5px
+}

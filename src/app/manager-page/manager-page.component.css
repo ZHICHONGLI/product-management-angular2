@@ -29,3 +29,9 @@
     position: -webkit-sticky;
     position: sticky
 }
+
+#prdlen {
+    font-weight: 600;
+    margin-left: 5px;
+    margin-right: 5px
+}
