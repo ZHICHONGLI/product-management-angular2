@@ -8,3 +8,10 @@
     position: fixed;
     z-index: 100
 }
+
+.nav-item.active>.nav-link {
+    background-color: lightpink;
+    color: #e3f2fd;
+    border-radius: 5px;
+    font-weight: 700
+}
