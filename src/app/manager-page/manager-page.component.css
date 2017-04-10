@@ -37,5 +37,7 @@
 }
 
 tbody tr:hover {
-    background-color: #f7d7e2
+    border-color: #f7d7e2;
+    border-left-style: solid;
+    border-top-style: solid
 }
