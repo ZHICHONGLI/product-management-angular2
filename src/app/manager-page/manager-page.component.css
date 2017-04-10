@@ -35,3 +35,7 @@
     margin-left: 5px;
     margin-right: 5px
 }
+
+tbody tr:hover {
+    background-color: #f7d7e2
+}
