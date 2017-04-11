@@ -29,6 +29,7 @@
                             <th class="text-center">Packing</th>
                             <th class="text-center">Description</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Add</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +44,7 @@
                             <td class="text-center">{{prd.Packing}}</td>
                             <td class="text-center">{{prd.Description}}</td>
                             <td class="text-center"><button [className]="statusCls(prd.Status)">{{statusShow(prd.Status)}}</button></td>
+                            <td class="text-center"><button class="btn btn-primary" (click)="addModal(prd)">Add</button> </td>
                         </tr>
                     </tbody>
 

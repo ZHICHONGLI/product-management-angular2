@@ -48,6 +48,7 @@ import { AddToCartComponent } from './client-page/add-to-cart/add-to-cart.compon
     {provide: 'modalService', useClass: ModalserviceService},
     {provide: 'titleService', useClass: Title}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddToCartComponent]
 })
 export class AppModule { }

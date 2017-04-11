@@ -1,5 +1,7 @@
 import { Component, OnInit, Pipe, PipeTransform,Inject } from '@angular/core';
 import {products} from '../data';
+import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddToCartComponent } from "./add-to-cart/add-to-cart.component";
 @Component({
   selector: 'app-client-page',
   templateUrl: './client-page.component.html',
@@ -11,7 +13,8 @@ import {products} from '../data';
 export class ClientPageComponent implements OnInit {
 
   constructor(@Inject('modalService') private mdService,
-              @Inject('titleService') private titleSer
+              @Inject('titleService') private titleSer,
+              private modalService: NgbModal, 
   ) {
    
   }
@@ -47,6 +50,13 @@ export class ClientPageComponent implements OnInit {
     return "/"
   }
  }
+
+addModal(prd){
+  const modalRef = this.modalService.open(AddToCartComponent);
+    modalRef.componentInstance.curPrd = prd;
+    return modalRef.result;
+}
+
 }
 /*
 @Pipe({
