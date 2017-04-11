@@ -19,6 +19,7 @@ import { searchFilter } from './search.filter';
 //import { ManagerPageModule } from './manager-page/manager-page.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalserviceService } from './modalservice.service';
+import { AddToCartComponent } from './client-page/add-to-cart/add-to-cart.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ModalserviceService } from './modalservice.service';
     FrontPageComponent,
    // ManagerPageComponent,
     ClientPageComponent,
-   searchFilter
+   searchFilter,
+   AddToCartComponent
   //  AddnewComponent
   ],
   imports: [
