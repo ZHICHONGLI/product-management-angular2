@@ -1,19 +1,17 @@
 import { Component, OnInit,Input, Inject } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { CartComComponent } from '../cart-com/cart-com.component'
 
 
 @Component({
   selector: 'app-add-to-cart',
   templateUrl: './add-to-cart.component.html',
-  styleUrls: ['./add-to-cart.component.css'],
-  providers:[CartComComponent]
+  styleUrls: ['./add-to-cart.component.css']
 })
 export class AddToCartComponent implements OnInit {
  
   constructor(@Inject('modalService') private mdService,
               public activeModal: NgbActiveModal,
-              private cart: CartComComponent
+              @Inject('cartService') private cartService
             
   ) { 
   }
@@ -33,8 +31,8 @@ export class AddToCartComponent implements OnInit {
 
     
     let neworder = new itemSet(this.curPrd, this.orderq);
-    this.cart.insert(neworder);
     //console.dir(neworder);
+    this.cartService.insert(neworder);
     this.activeModal.close();
   }
 

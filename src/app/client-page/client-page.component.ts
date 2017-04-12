@@ -15,16 +15,19 @@ export class ClientPageComponent implements OnInit {
   constructor(@Inject('modalService') private mdService,
               @Inject('titleService') private titleSer,
               private modalService: NgbModal, 
+              @Inject('cartService') private cartService
   ) {
    
   }
-  search : any="";
+  search : any = "";
   cartqty: number = 0;
   product:any = this.mdService.Prods;
   _subscription = this.mdService.ProdsChange.subscribe((value)=>{
      this.product = value;
    })
-
+  __subscription = this.cartService.totalChange.subscribe((value)=>{
+    this.cartqty = value;
+  }) 
   ngOnInit() {
     console.log(products );
     this.titleSer.setTitle("Client Page");

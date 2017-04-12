@@ -31,5 +31,6 @@ tbody tr:hover {
 #cart {
     background-color: lightgreen;
     margin-bottom: 10px;
-    border-radius: 20px
+    border-radius: 20px;
+    height: 30px
 }
