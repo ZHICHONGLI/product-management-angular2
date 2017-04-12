@@ -21,6 +21,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalserviceService } from './modalservice.service';
 import { AddToCartComponent } from './client-page/add-to-cart/add-to-cart.component';
 import { CartServService } from "./cart-serv.service";
+import { ViewCartComponent } from './client-page/view-cart/view-cart.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CartServService } from "./cart-serv.service";
    // ManagerPageComponent,
     ClientPageComponent,
    searchFilter,
-   AddToCartComponent
+   AddToCartComponent,
+   ViewCartComponent
    //CartComponentComponent
   //  AddnewComponent
   ],
@@ -52,6 +54,6 @@ import { CartServService } from "./cart-serv.service";
     {provide: 'cartService', useClass: CartServService}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AddToCartComponent]
+  entryComponents: [AddToCartComponent, ViewCartComponent]
 })
 export class AppModule { }

@@ -22,4 +22,7 @@ export class CartServService {
     }
     return totalCount;
   }
+  viewCart(){
+    return this.orderList;
+  }
 }
