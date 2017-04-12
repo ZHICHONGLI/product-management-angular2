@@ -12,10 +12,14 @@
             <input type="number" [(ngModel)]="item.qty">
         </div>
         <br>
+        <button type="button" class="btn btn-success" (click)="editTo()" *ngIf="cartList.length">Edit</button>
+        <div *ngIf="!cartList.length">
+            <h2>Empty Cart</h2>
+        </div>
     </div>
     <div class="modal-footer">
 
-        <button type="button" class="btn btn-success" (click)="editTo()">Edit</button>
+        <button type="button" class="btn btn-success" (click)="orderPlace()" *ngIf="cartList.length">Place Order</button>
         <button type="button" class="btn btn-default" data-dismiss="modal" (click)="activeModal.close()">Close</button>
     </div>
 

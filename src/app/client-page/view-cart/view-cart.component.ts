@@ -20,7 +20,11 @@ export class ViewCartComponent implements OnInit {
   editTo(){
 
 
-    this.activeModal.close('edit');
+   
+  }
+  orderPlace(){
+
+     this.activeModal.close('edit');
   }
 
 }
