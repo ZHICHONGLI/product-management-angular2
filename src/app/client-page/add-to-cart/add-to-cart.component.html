@@ -8,9 +8,10 @@
     <p>Product: <b>{{curPrd.Name}}</b></p>
     <p>Stock: <b>{{curPrd.Stock}}</b></p>
     <label>Quantity:</label>
-    <input type="number" class="form-control" [(ngModel)]="orderq">
+    <input required type="number" #orderRef="ngModel" class="form-control ng-valid" [(ngModel)]="orderq" min="0" [max]="curPrd.Stock">
+    <div *ngIf="orderRef.errors?.required">Required</div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="addPrd()">Add</button>
+    <button type="button" class="btn btn-primary" (click)="addPrd()" [disabled]="orderRef.errors">Add</button>
     <button type="button" class="btn btn-secondary" (click)="activeModal.close('close click')">Cancel</button>
 </div>

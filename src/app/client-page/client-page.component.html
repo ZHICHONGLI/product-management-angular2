@@ -1,6 +1,14 @@
 <div class="container-fluid">
     <div class="row">
-        <h1>Products</h1>
+        <div class="col-md-8">
+            <h1>Products</h1>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2 text-right" id="cart">
+            Items in Cart: {{cartqty}}
+        </div>
     </div>
     <div class="row">
         <div class="card">
@@ -44,7 +52,7 @@
                             <td class="text-center">{{prd.Packing}}</td>
                             <td class="text-center">{{prd.Description}}</td>
                             <td class="text-center"><button [className]="statusCls(prd.Status)">{{statusShow(prd.Status)}}</button></td>
-                            <td class="text-center"><button class="btn btn-primary" (click)="addModal(prd)">Add</button> </td>
+                            <td class="text-center"><button class="btn btn-primary" (click)="addModal(prd)" [disabled]="!prd.Status">Add</button> </td>
                         </tr>
                     </tbody>
 

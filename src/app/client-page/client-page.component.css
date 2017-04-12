@@ -23,3 +23,13 @@
 tbody tr:hover {
     background-color: #f7d7e2
 }
+
+#cart:hover {
+    cursor: pointer
+}
+
+#cart {
+    background-color: lightgreen;
+    margin-bottom: 10px;
+    border-radius: 20px
+}

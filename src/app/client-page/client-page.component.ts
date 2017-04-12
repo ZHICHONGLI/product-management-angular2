@@ -19,7 +19,7 @@ export class ClientPageComponent implements OnInit {
    
   }
   search : any="";
-
+  cartqty: number = 0;
   product:any = this.mdService.Prods;
   _subscription = this.mdService.ProdsChange.subscribe((value)=>{
      this.product = value;

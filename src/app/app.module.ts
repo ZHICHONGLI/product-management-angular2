@@ -20,6 +20,7 @@ import { searchFilter } from './search.filter';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ModalserviceService } from './modalservice.service';
 import { AddToCartComponent } from './client-page/add-to-cart/add-to-cart.component';
+import { CartComComponent } from './client-page/cart-com/cart-com.component';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { AddToCartComponent } from './client-page/add-to-cart/add-to-cart.compon
    // ManagerPageComponent,
     ClientPageComponent,
    searchFilter,
-   AddToCartComponent
+   AddToCartComponent,
+   CartComComponent,
+   //CartComponentComponent
   //  AddnewComponent
   ],
   imports: [
