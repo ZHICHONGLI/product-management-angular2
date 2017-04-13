@@ -21,8 +21,8 @@ this.prdobj = Object.assign({},this.curPrd);
   
 
   editTo(){
-    //console.log(this.curPrd);
-    this.mdService.editComfirm(this.curPrd);
+    //console.log(this.prdobj);
+    this.mdService.editComfirm(this.prdobj);
     this.activeModal.close();
   }
   close(){

@@ -29,9 +29,13 @@ ProdsChange: Subject<any> = new Subject <any>();
 
  
   editComfirm(curPrd){
-   // console.log(curPrd);
-    let idx = this.Prods.indexOf(curPrd);
-    this.Prods[idx]=curPrd;
+    let id = curPrd.id;
+    let idx = this.Prods.findIndex(item => item.id == id);
+    this.Prods = [
+      ...this.Prods.slice(0,idx),
+      ...curPrd,
+      ...this.Prods.slice(idx+1, this.Prods.length)
+    ];
     this.ProdsChange.next(this.Prods);
   }
 
