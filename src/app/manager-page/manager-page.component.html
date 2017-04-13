@@ -47,7 +47,7 @@
                                 <p [hidden]="activeItem!==prd">
                                     <span class="pointerstyle" (click)="updateStock(prd) ">update</span>
                                     <span>  | </span>
-                                    <span class="pointerstyle" (click)="stockHide() "> cancel</span>
+                                    <span class="pointerstyle" (click)="stockHide(prd) "> cancel</span>
                                 </p>
                             </td>
                             <td class="text-center">{{prd.Packing}}</td>

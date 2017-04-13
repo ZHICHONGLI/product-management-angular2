@@ -10,18 +10,23 @@ export class EditModalComponent implements OnInit {
   constructor(@Inject('modalService') private mdService,
               public activeModal: NgbActiveModal,
   ) { }
-  
   //private prdobj = { ...this.curPrd };
   //prdobj= Object.assign({}, this.curPrd);
   //public prdobj = this.curPrd;
+  private prdobj;
+  //prevate this.prdobj = this.curPrd;
   ngOnInit() {
-
+this.prdobj = Object.assign({},this.curPrd);
   }
   
 
   editTo(){
     //console.log(this.curPrd);
     this.mdService.editComfirm(this.curPrd);
+    this.activeModal.close();
+  }
+  close(){
+this.curPrd = this.prdobj;
     this.activeModal.close();
   }
 

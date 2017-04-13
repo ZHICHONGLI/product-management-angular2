@@ -9,27 +9,27 @@
     <div class="modal-body">
         <div class="input-group">
             <span class="input-group-addon">Name</span>
-            <input [(ngModel)]="curPrd.Name" type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
+            <input [(ngModel)]="prdobj.Name" type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">Price</span>
-            <input [(ngModel)]="curPrd.Price" type="number" class="form-control" placeholder="Price" aria-describedby="basic-addon1">
+            <input [(ngModel)]="prdobj.Price" type="number" class="form-control" placeholder="Price" aria-describedby="basic-addon1">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">Stock</span>
-            <input [(ngModel)]="curPrd.Stock" type="number" class="form-control" placeholder="Stock" aria-describedby="basic-addon1">
+            <input [(ngModel)]="prdobj.Stock" type="number" class="form-control" placeholder="Stock" aria-describedby="basic-addon1">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">Packing</span>
-            <input [(ngModel)]="curPrd.Packing" type="text" class="form-control" placeholder="Packing" aria-describedby="basic-addon1">
+            <input [(ngModel)]="prdobj.Packing" type="text" class="form-control" placeholder="Packing" aria-describedby="basic-addon1">
         </div>
         <br>
         <div class="input-group">
             <span class="input-group-addon">Description</span>
-            <textarea [(ngModel)]="curPrd.Description" type="text" class="form-control" rows="3" placeholder="Description" aria-describedby="basic-addon1"></textarea>
+            <textarea [(ngModel)]="prdobj.Description" type="text" class="form-control" rows="3" placeholder="Description" aria-describedby="basic-addon1"></textarea>
         </div>
         <br>
 
@@ -38,7 +38,7 @@
     <div class="modal-footer">
 
         <button type="button" class="btn btn-success" (click)="editTo()">Edit</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="activeModal.close()">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="close()">Close</button>
     </div>
 
 </div>

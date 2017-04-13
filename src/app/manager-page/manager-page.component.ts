@@ -59,18 +59,21 @@ export class ManagerPageComponent implements OnInit {
   }
 
   activeItem = false;
+  private prestock;
   updateStock(prd:any){
     this.mdService.editComfirm(prd);
     this.activeItem = false;
   };
   stockEdit(prd:any){
     this.activeItem = prd;
+    this.prestock = prd.Stock;
  //   this.stockShow = !this.stockShow; 
 
   };
-  stockHide(){
+  stockHide(x){
    // console.log("stockHide");
     this.activeItem = false;
+    x.Stock = this.prestock;
    // console.log(this.activeItem);
   };
  // stockShow:boolean = true;
