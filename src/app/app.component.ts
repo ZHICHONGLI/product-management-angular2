@@ -7,7 +7,6 @@ import { DOCUMENT } from "@angular/platform-browser";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
- // public showBtn: boolean = true;
  
   constructor(@Inject(DOCUMENT)public document: any,
              // @Inject('titleService') public titleService
@@ -23,7 +22,8 @@ export class AppComponent{
   public showBtn:boolean = false;
   @HostListener('window:scroll',[])
   onWindowScroll(){
-    let offsetValue = this.document.body.scrollTop;
+    let offsetValue = this.document.body.scrollTop || this.document.documentElement.scrollTop;
+    console.log(offsetValue);
     if(offsetValue > 200){
       //this.document.getElementById('topbtn').style.display = 'block';
       this.showBtn = true;
