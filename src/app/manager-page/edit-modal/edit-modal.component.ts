@@ -6,13 +6,18 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./edit-modal.component.css']
 })
 export class EditModalComponent implements OnInit {
-
+@Input() curPrd;
   constructor(@Inject('modalService') private mdService,
-              public activeModal: NgbActiveModal
+              public activeModal: NgbActiveModal,
   ) { }
-  @Input() curPrd;
+  
+  //private prdobj = { ...this.curPrd };
+  //prdobj= Object.assign({}, this.curPrd);
+  //public prdobj = this.curPrd;
   ngOnInit() {
+
   }
+  
 
   editTo(){
     //console.log(this.curPrd);

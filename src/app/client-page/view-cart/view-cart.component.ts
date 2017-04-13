@@ -16,15 +16,16 @@ export class ViewCartComponent implements OnInit {
     this.cartList = this.cartService.viewCart();
     console.dir(this.cartList);
   }
-
-  editTo(){
-
-
-   
+  editTo(){    //edit issue: two-way data binding makes edit applied to orderList in service automatically. Using backend DB can void 
   }
   orderPlace(){
 
      this.activeModal.close('edit');
+  }
+
+  closeCart(){
+    this.cartList = this.cartService.viewCart();
+    this.activeModal.close('close');
   }
 
 }
