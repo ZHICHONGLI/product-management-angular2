@@ -32,6 +32,7 @@ export class ClientPageComponent implements OnInit {
   ngOnInit() {
     console.log(products );
     this.titleSer.setTitle("Client Page");
+    this.cartqty = this.cartService.totalItem();
   }
  statusShow(status:boolean){
   if (status == true){

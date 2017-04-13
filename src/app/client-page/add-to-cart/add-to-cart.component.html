@@ -9,7 +9,7 @@
     <p>Stock: <b>{{curPrd.Stock}}</b></p>
     <label>Quantity:</label>
     <input required type="number" #orderRef="ngModel" class="form-control ng-valid" [(ngModel)]="orderq" min="0" [max]="curPrd.Stock">
-    <div *ngIf="orderRef.errors?.required">Required</div>
+    <div *ngIf="orderRef.hasError('required')">Required</div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-primary" (click)="addPrd()" [disabled]="orderRef.errors">Add</button>

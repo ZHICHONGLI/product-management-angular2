@@ -11,7 +11,7 @@ export class ViewCartComponent implements OnInit {
   constructor(@Inject ('cartService') private cartService,
               public activeModal: NgbActiveModal
   ) { }
-  public cartList = [];
+  public cartList = this.cartService.viewCart();
   ngOnInit() {
     this.cartList = this.cartService.viewCart();
     console.dir(this.cartList);

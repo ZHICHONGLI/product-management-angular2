@@ -16,7 +16,7 @@ export class AddToCartComponent implements OnInit {
   ) { 
   }
     @Input() curPrd 
-  private orderq: number = 1;
+  public orderq: number = 1;
   ngOnInit() {
     console.log(this.curPrd.Stock);
     const stocklimit: number = this.curPrd.Stock;

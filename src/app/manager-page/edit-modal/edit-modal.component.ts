@@ -13,7 +13,7 @@ export class EditModalComponent implements OnInit {
   //private prdobj = { ...this.curPrd };
   //prdobj= Object.assign({}, this.curPrd);
   //public prdobj = this.curPrd;
-  private prdobj;
+  public prdobj;
   //prevate this.prdobj = this.curPrd;
   ngOnInit() {
 this.prdobj = Object.assign({},this.curPrd);
