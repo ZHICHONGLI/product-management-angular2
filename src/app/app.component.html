@@ -22,7 +22,7 @@
     <router-outlet></router-outlet>
 </div>
 
-<button id="topbtn" class="btn btn-secondary" [hidden]="!showBtn" (click)="goTop()">
+<button id="topbtn" class="btn btn-secondary" *ngIf="showBtn" (click)="goTop()">
     <i class="fa fa-rocket" aria-hidden="true"></i>
     <br> Top
 </button>

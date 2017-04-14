@@ -6,7 +6,8 @@
     bottom: 15px;
     right: 10px;
     position: fixed;
-    z-index: 100
+    z-index: 100;
+    cursor: pointer
 }
 
 .nav-item.active>.nav-link {

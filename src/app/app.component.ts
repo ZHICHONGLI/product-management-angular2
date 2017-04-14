@@ -23,7 +23,7 @@ export class AppComponent{
   @HostListener('window:scroll',[])
   onWindowScroll(){
     let offsetValue = this.document.body.scrollTop || this.document.documentElement.scrollTop;
-    console.log(offsetValue);
+   // console.log(offsetValue);
     if(offsetValue > 200){
       //this.document.getElementById('topbtn').style.display = 'block';
       this.showBtn = true;

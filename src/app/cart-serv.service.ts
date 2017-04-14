@@ -25,4 +25,9 @@ export class CartServService {
   viewCart(){
     return this.orderList;
   }
+  emptyCart(){
+    this.orderList = [];
+    this.totalCount = this.totalItem();
+    this.totalChange.next(this.totalCount);
+  }
 }

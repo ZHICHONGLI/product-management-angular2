@@ -7,19 +7,20 @@
         </button>
     </div>
     <div class="modal-body">
-        <div class="input-group" *ngFor="let item of cartList">
+        <div class="input-group" *ngFor="let item of precart">
             <p>{{item.product.Name}}</p>
             <input type="number" [(ngModel)]="item.qty">
         </div>
         <br>
-        <button type="button" class="btn btn-success" (click)="editTo()" *ngIf="cartList.length">Edit</button>
-        <div *ngIf="!cartList.length">
+        <button type="button" class="btn btn-success" (click)="editTo()" *ngIf="precart.length">Edit</button>
+        <button type="button" class="btn btn-secoundary" (click)="clearCart()" *ngIf="precart.length">Empty Cart</button>
+        <div *ngIf="!precart.length">
             <h2>Empty Cart</h2>
         </div>
     </div>
     <div class="modal-footer">
 
-        <button type="button" class="btn btn-success" (click)="orderPlace()" *ngIf="cartList.length">Place Order</button>
+        <button type="button" class="btn btn-success" (click)="orderPlace()" *ngIf="precart.length">Place Order</button>
         <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeCart()">Close</button>
     </div>
 
