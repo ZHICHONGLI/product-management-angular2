@@ -30,4 +30,9 @@ export class CartServService {
     this.totalCount = this.totalItem();
     this.totalChange.next(this.totalCount);
   }
+  editCart(newCart){
+    this.orderList = [... newCart];
+    this.totalCount = this.totalItem();
+    this.totalChange.next(this.totalCount);
+  }
 }

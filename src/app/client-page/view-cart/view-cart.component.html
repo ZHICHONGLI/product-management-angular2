@@ -7,10 +7,18 @@
         </button>
     </div>
     <div class="modal-body">
-        <div class="input-group" *ngFor="let item of precart">
-            <p>{{item.product.Name}}</p>
-            <input type="number" [(ngModel)]="item.qty">
+        <div class="input-group row" *ngFor="let item of precart">
+            <div class="col-md-9">
+                {{item.product.Name}}
+            </div>
+            <div class="col-md-3">
+                <span><input id="input1" type="number" [(ngModel)]="item.qty"></span>
+                <span (click)="removeItem(item)"><i class="fa fa-times" aria-hidden="true"></i></span>
+            </div>
+            <hr>
+            <br>
         </div>
+        <br>
         <br>
         <button type="button" class="btn btn-success" (click)="editTo()" *ngIf="precart.length">Edit</button>
         <button type="button" class="btn btn-secoundary" (click)="clearCart()" *ngIf="precart.length">Empty Cart</button>

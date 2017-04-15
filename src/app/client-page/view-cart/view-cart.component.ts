@@ -20,7 +20,7 @@ export class ViewCartComponent implements OnInit {
   }
   editTo(){    //edit issue: two-way data binding makes edit applied to orderList in service automatically. Using backend DB can void 
 // push precart to cartservice   
-
+    this.cartService.editCart(this.precart);
 }
   orderPlace(){
       alert("UNAVAILABLE NOW");
@@ -35,6 +35,15 @@ export class ViewCartComponent implements OnInit {
   clearCart(){
     this.cartService.emptyCart();
     this.precart = [];
+  }
+  removeItem(item){
+    console.dir(item);
+    let idx = this.precart.indexOf(item);
+    this.precart = [
+      ...this.precart.slice(0,idx),
+      ...this.precart.slice(idx+1, this.precart.length)
+    ];
+    this.cartService.editCart(this.precart);
   }
 
 }
